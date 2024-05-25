@@ -6,14 +6,15 @@ function HomeList() {
   let { data } = product;
   console.log(data);
   return (
-    <div className="flex items-center justify-center h-full w-full containerH m-6 flex-col ">
+    <div className="containerH flex justify-center  gap- mb-5 items-center  md:flex-col flex-col">
       <h2 className="text-xl font-semibold m-5  ">Featured Products</h2>
       <hr className=" w-full" />
       <div className="flex gap-5 justify-between items-baseline ">
         {data &&
           data.map((product) => {
             return (
-              <Link key={product.id}
+              <Link
+                key={product.id}
                 to={`/prodact/${product.id}`}
                 className="card w-96 bg-base-100 shadow-xl hover:drop-shadow-2xl  "
               >

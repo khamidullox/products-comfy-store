@@ -15,7 +15,7 @@ function Error() {
   };
   if (error.status == 404) {
     return (
-      <div className=" flex items-center justify-center h-full object-cover flex-col">
+      <div className=" flex items-center justify-center h-[100vh] place-items-center object-cover flex-col">
         <div className="lg:size-96 md:size-72 size-48 ">
           {" "}
           <Lottie options={defaultOptions} />
@@ -27,7 +27,11 @@ function Error() {
       </div>
     );
   }
-  return <h1>Bosk</h1>;
+  return (
+    <h1 className="h-[100vh] flex items-center justify-center place-items-center text-3xl font-bold">
+      Something went wrong...
+    </h1>
+  );
 }
 
 export default Error;

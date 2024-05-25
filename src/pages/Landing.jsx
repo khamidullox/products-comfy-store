@@ -14,10 +14,16 @@ export const loader = async () => {
 function Landing() {
   let { product } = useLoaderData();
   let { data } = product;
+  let images = [
+    "/src/assets/hero1.webp",
+    "/src/assets/hero2.webp",
+    "/src/assets/hero3.webp",
+    "/src/assets/hero4.webp",
+  ];
 
   return (
     <>
-      <div className="containerH flex justify-center gap-20 items-center mt-16 lg:flex-row md:flex-col flex-col ">
+      <div className="containerH flex justify-center  gap-20 items-center mt-16 lg:flex-row md:flex-col flex-col ">
         <div className="flex flex-col items-start gap-5  lg:w-[32rem]">
           <p className=" text-6xl font-bold ">
             We are changing the way people shop
@@ -31,13 +37,14 @@ function Landing() {
             Our Products
           </Link>
         </div>
-        <div className="carousel md:w-96 w-full carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
-          <div className="carousel-item">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
-              className="rounded-box"
-            />
-          </div>
+        <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+          {images.map((img) => {
+            return (
+              <div className="carousel-item">
+                <img src={img} className="rounded-box w-80 object-cover" />
+              </div>
+            );
+          })}
         </div>
       </div>
       <HomeList />
