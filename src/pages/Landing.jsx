@@ -15,7 +15,7 @@ function Landing() {
   let { product } = useLoaderData();
   let { data } = product;
   let images = [
-    "/hero1.webp",
+    "/assets/hero1.webp",
     "/hero2.webp",
     "/hero3.webp",
     "/hero4.webp",
