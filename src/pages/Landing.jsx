@@ -16,9 +16,9 @@ function Landing() {
   let { data } = product;
   let images = [
     "/assets/hero1.webp",
-    "/hero2.webp",
-    "/hero3.webp",
-    "/hero4.webp",
+    "/assets/hero2.webp",
+    "/assets/hero3.webp",
+    "/assets/hero4.webp",
   ];
 
   return (
