@@ -38,9 +38,9 @@ function Landing() {
           </Link>
         </div>
         <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
-          {images.map((img) => {
+          {images.map((img, id) => {
             return (
-              <div className="carousel-item">
+              <div key={id} className="carousel-item">
                 <img src={img} className="rounded-box w-80 object-cover" />
               </div>
             );
