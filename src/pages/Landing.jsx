@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
-import { customFetch } from "../app/index";
+import { customFetch } from "../utils/index";
 
-import HomeList from "../components/HomeList";
+import ProductGrid from "../components/ProductGrid";
+import HomeFutter from "../components/HomeFutter";
 
 export const loader = async () => {
-  const req = await customFetch(`?featured=true`);
+  const req = await customFetch(`/?featured=true`);
   const product = await req.data;
   return { product };
 };
@@ -47,7 +48,7 @@ function Landing() {
           })}
         </div>
       </div>
-      <HomeList />
+      <HomeFutter />
     </>
   );
 }

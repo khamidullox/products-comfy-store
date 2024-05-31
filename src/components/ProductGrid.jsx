@@ -1,17 +1,19 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
-function HomeList() {
+import { formatPrice } from "../utils";
+function ProductGrid() {
   let { product } = useLoaderData();
   let { data } = product;
-  console.log(data);
+
   return (
-    <div className="containerH flex justify-center  gap- mb-5 items-center  md:flex-col flex-col">
-      <h2 className="text-xl font-semibold m-5  ">Featured Products</h2>
-      <hr className=" w-full" />
-      <div className="flex gap-5 justify-between items-baseline ">
+    <div className="">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
         {data &&
           data.map((product) => {
+            let { price, image, title } = product.attributes;
+
+            let amoutPrice = formatPrice(price);
             return (
               <Link
                 key={product.id}
@@ -20,16 +22,16 @@ function HomeList() {
               >
                 <figure className="px-10 pt-10">
                   <img
-                    src={product.attributes.image}
+                    src={image}
                     alt="Shoes"
                     className="rounded-xl size-40 w-full object-cover"
                   />
                 </figure>
                 <div className="card-body items-center text-center">
-                  <h2 className="card-title">{product.attributes.title}</h2>
+                  <h2 className="card-title capitalize">{title}</h2>
 
                   <div className="card-actions">
-                    <button className="">${product.attributes.price}</button>
+                    <button className="">{amoutPrice}</button>
                   </div>
                 </div>
               </Link>
@@ -40,4 +42,4 @@ function HomeList() {
   );
 }
 
-export default HomeList;
+export default ProductGrid;
