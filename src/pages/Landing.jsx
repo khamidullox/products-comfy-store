@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
-import { customFetch } from "../utils/index";
+import { customFetch } from "../utils/index.jsx";
 
 import ProductGrid from "../components/ProductGrid";
 import HomeFutter from "../components/HomeFutter";

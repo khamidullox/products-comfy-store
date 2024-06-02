@@ -12,3 +12,13 @@ export let formatPrice = (price) => {
 
   return dollarAmout;
 };
+export let genetarteAmoutOptions = (number) => {
+  return Array.from({ length: number }, (_, index) => {
+    let amout = index + 1;
+    return (
+      <option key={amout} value={amout}>
+        {amout}
+      </option>
+    );
+  });
+};

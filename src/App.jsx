@@ -49,7 +49,7 @@ function App() {
           element: <Chekout />,
         },
         {
-          path: "/ordes",
+          path: "/orders",
           element: <Order />,
         },
         {

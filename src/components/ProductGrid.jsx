@@ -1,14 +1,14 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { formatPrice } from "../utils";
+import { formatPrice } from "../utils/index";
 function ProductGrid() {
   let { product } = useLoaderData();
   let { data } = product;
 
   return (
-    <div className="">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+    <div className="containerH w-full ">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-5  ">
         {data &&
           data.map((product) => {
             let { price, image, title } = product.attributes;

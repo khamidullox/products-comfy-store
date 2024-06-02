@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { formatPrice } from "../utils";
+import { formatPrice } from "../utils/index";
 function ProductList() {
   let { product } = useLoaderData();
   let { data } = product;
@@ -13,6 +13,7 @@ function ProductList() {
           let priceAmout = formatPrice(price);
           return (
             <Link
+              key={product.id}
               to={`/prodact/${product.id}`}
               className=" bg-white drop-shadow-lg hover:drop-shadow-xl p-5 rounded-xl flex justify-between items-top group hover:bg-base-200"
             >
