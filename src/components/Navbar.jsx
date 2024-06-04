@@ -2,8 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavbarList from "./NavbarList";
 import { BsCartPlus } from "react-icons/bs";
-
+import { useEffect, useState } from "react";
 function Navbar() {
+  let localStrog = () => {
+    return localStorage.getItem("theme")
+      ? localStorage.getItem("theme")
+      : "dim";
+  };
+
+  let [theme, setTheme] = useState(localStrog());
+
+  const darkMode = (e) => {
+    if (e.target.checked) {
+      setTheme("winter");
+    } else {
+      setTheme("dim");
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   return (
     <nav className="lg:containerH">
       <div className="navbar bg-base-100">
@@ -42,7 +62,7 @@ function Navbar() {
           </ul>
         </div>
         <div className="navbar-end">
-          <label className="swap swap-rotate mr-5 ">
+          <label onClick={darkMode} className="swap swap-rotate mr-5 ">
             {/* this hidden checkbox controls the state */}
             <input
               type="checkbox"

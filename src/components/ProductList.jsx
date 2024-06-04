@@ -15,7 +15,7 @@ function ProductList() {
             <Link
               key={product.id}
               to={`/prodact/${product.id}`}
-              className=" bg-white drop-shadow-lg hover:drop-shadow-xl p-5 rounded-xl flex justify-between items-top group hover:bg-base-200"
+              className=" bg-base-100 drop-shadow-lg hover:drop-shadow-xl p-5 rounded-xl flex justify-between items-top group hover:bg-base-200"
             >
               <div className="flex gap-10  ">
                 <figure className="    ">
